@@ -21,18 +21,18 @@ const sendResponse = (filename,statusCode,response) => { // statusCode 读取用
 			response.end("Sorry, Internet error");// 发送报错信息，只需将简短的错误信息返回给用户
 		}else{
 			response.statusCode = statusCode; // 程序不报错，返回对应的html
-			response.setHeader("Content-Type","text/html");
+			response.setHeader("Content-Type","text/html;charset:utf-8");
 			response.end(data); // 发送读取的data
 		}
 
-	}) ;
-}
+	});
+};
 
 const server = http.createServer(function (request, response) { //植入请求监听器，用于识别前端返回的信息,
 	// req = request, res = response
-	response.writeHead(200,{'Content-Type':'text/html;charset:utf-8'}); //避免中文显示乱码
-	response.write('<head><meta charset="utf-8"/></head>'); //避免中文显示乱码
 	console.log(request.url,request.method);// 返回请求页面的url, method 可以识别请求方法是POST还是GET
+	//response.writeHead(200,{'Content-Type':'text/html;charset:utf-8'}); //避免中文显示乱码
+	//response.write('<head><meta charset="utf-8"/></head>'); //避免中文显示乱码
 	// 赋予变量名，方便调用
 	const method = request.method;
 	const url = request.url;
@@ -50,8 +50,7 @@ const server = http.createServer(function (request, response) { //植入请求�
 	else{
 
 	}
-
-})
+});
 
 
 const port = 8888;
