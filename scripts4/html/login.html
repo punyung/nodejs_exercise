@@ -1,0 +1,18 @@
+<!--
+登陆界面
+插入表单form，共有两个属性
+method：告诉表单发POST请求或GET请求
+action：请求需要发送到哪个url
+-->
+<html>
+    <body>
+        <h1>Login </h1>
+        <form method="POST" action="/process-login">
+            <label for="username">Username</label> <!-- 用for将id为username的输入框进行绑定 -->
+            <input type="text" name = "username" id = "username"> <!-- 显示输入框,name 属性用于后端识别这个是输入的用户名-->
+            <label for="password">Password</label> <!-- 用for将id为password的输入框进行绑定 -->
+            <input type="password" name="password" id="password">
+            <input type="submit" value="Submit"> <!-- value 属性设置按钮上的文字-->
+        </form>
+    </body>
+</html>
