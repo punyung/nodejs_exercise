@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "koa": "^2.13.4",
+    "mysql": "^2.18.1",
+    "upper-case": "^2.0.2"
+  }
+}
