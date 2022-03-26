@@ -4,6 +4,7 @@ const Router = require("koa-router"); // 引入路由
 const router = new Router();
 const list  =  require(`./list`);
 const home  =  require(`./home`);
+const login  =  require(`./login`);
 
 //get相当于前端做的GET请求
 router.get('/', async (ctx)=>{
@@ -20,6 +21,7 @@ router.get('/', async (ctx)=>{
  */
 router.use(`/list`,list.routes(),list.allowedMethods());
 router.use(`/home`,home.routes(),home.allowedMethods());
+router.use(`/login`,login.routes(),login.allowedMethods());
 
 // 如果前端还是访问了 http://localhost:5050
 // 重定向到home
